@@ -8,6 +8,7 @@ const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 
 app.use(bodyParser.urlencoded({ extended: false }));
+/* To serve static files : read access */
 app.use(express.static(path.join(__dirname, 'public')));
 
 

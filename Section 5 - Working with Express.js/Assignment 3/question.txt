@@ -1,0 +1,9 @@
+1. Create npm project with express.js 
+2. Create 2 routes which serves two HTML files with your content "/" and "users"
+3. Add static files to your project that should be required by atleast one of the files
+
+
+added ajax and random numbers adding to a table every 5 min 
+returned json response
+
+easy assignment
