@@ -2,15 +2,16 @@ const path = require('path');
 
 const express = require('express');
 const bodyParser = require('body-parser');
-const expressHandlebar = require('express-handlebars');
 
 const app = express();
+//app.set('view engine', 'pug'); //setup for pug
 
-//app.set('view engine', 'pug');
+/* setup for ejs starts here */
+// ejs doesnt have layouts but we can use partials (something like django)
+app.set('view engine', 'ejs')
+app.set('views', 'views')
+/* setup for ejs ends here */
 
-// if you name handlebars as xyz then have to make files shop.xyz
-app.engine('handlebars', expressHandlebar()); // for handlebar
-app.set('view engine', 'handlebars') //forhandlebar
 
 app.set('views', 'views');
 
@@ -25,7 +26,8 @@ app.use(shopRoutes);
 
 app.use((req, res, next) => {
     res.status(404).render('404', {
-        pageTitle : 'Page Not Found'
+        pageTitle : 'Page Not Found',
+        path: ''
     }); //pug 
 //    res.status(404).sendFile(path.join(__dirname, 'views', '404.html'));
 });
