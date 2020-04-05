@@ -5,7 +5,6 @@ const BASE_path = require('../util/path');
 const p = path.join(BASE_path, 'data', 'products.json');
 
 const getProductsFromFile = (cb) => {
-	// have to use callback function because this takes time to execute
 	fs.readFile(p, (err, fileContent) => {
 		if(err) {
 			cb([]);
@@ -29,7 +28,6 @@ module.exports = class Product {
 		});
 		
 	}
-	// can call directly on class and don't need to make object
 	static fetchAll(cb) {
 		getProductsFromFile(cb)
 	}
