@@ -1,0 +1,3 @@
+Passing Route params
+Using query params
+Enhance our models
